@@ -12,6 +12,8 @@
   <!-- Template CSS -->
   <link href="//fonts.googleapis.com/css?family=Spartan:400,500,600,700,900&display=swap" rel="stylesheet">
   <!-- Template CSS  -->
+<!-- 	ajax cdn -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
@@ -295,7 +297,7 @@
 
 
                   <div class="container form mt-4">
-                    <form onsubmit="sendEmail(); reset(); return false;" id="submit-form" autocomplete="off">
+                    <form action="" id="submit-form" autocomplete="off">
                       <div class="input-group">
                         <label for="fname">Name</label>
                         <input type="text" id="fname" name="firstname" placeholder="" required="true">
@@ -361,35 +363,26 @@
       </div>
       <!-- move top -->
       <!-- mail submission start -->
-      <script src=" https://smtpjs.com/v3/smtp.js"></script>
+     
       <script>
-        function sendEmail() {
-          Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "bcamets4455@gamil.com",
-            Password: "83C4C7238747DCEBCB2D7393C68C9832113D",
-            To: 'theshahulofcl@gmaail.com',
-            From: "you@isp.com",
-            Subject: "This is the subject",
-            Body: "And this is the body"
-          }).then(
-            message => alert(message)
-          );
-          // Email.send({
-
-          //    SecureToken:"18c48a06-852e-4ae4-8cd0-caff2dcfe201",
-          //   // Host: "smtp.elasticemail.com",
-          //   // Username: "bcamets4455@gmail.com",
-          //   // Password: "9037434455",
-          //   To: 'shahulbasheer2002@gmail.com',
-          //   From: document.getElementById("email").value,
-          //   Subject: "n",
-          //   Body: "Name : "+document.getElementById("name").value
-          //   +"<br>"
-          // }).then(
-          //   message => alert("Message Send Succesfully")
-          // );
-        }
+       
+           $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzNo5FxOg_kCUK4UJTB61k_P7DD7Guvyejbbl6Qg__MKHkrTU62nrww6vpSklNmpmuJ/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
 
 
 
