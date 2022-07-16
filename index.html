@@ -13,7 +13,7 @@
   <link href="//fonts.googleapis.com/css?family=Spartan:400,500,600,700,900&display=swap" rel="stylesheet">
   <!-- Template CSS  -->
 <!-- 	ajax cdn -->
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
 
 </head>
 
@@ -364,55 +364,6 @@
       <!-- move top -->
       <!-- mail submission start -->
      
-      <script>
-       
-           $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbzNo5FxOg_kCUK4UJTB61k_P7DD7Guvyejbbl6Qg__MKHkrTU62nrww6vpSklNmpmuJ/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </script>
       <!-- // mail submission end -->
 
 
@@ -537,6 +488,26 @@
     })
   })
 </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script> 
+           $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzNo5FxOg_kCUK4UJTB61k_P7DD7Guvyejbbl6Qg__MKHkrTU62nrww6vpSklNmpmuJ/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Message Sended Successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+      </script>
 
 
 <!-- //for blog carousel slider -->
